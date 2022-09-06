@@ -65,6 +65,15 @@ export const resolvers = {
       })
 
       return post
+    },
+    deletePost: async (_: any, { id}: { id: string }) => {
+      await prisma.post.delete({
+        where: {
+          id
+        }
+      })
+
+      return 'Post deleted successfully'
     }
   }
 }
