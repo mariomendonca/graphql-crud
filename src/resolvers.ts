@@ -13,6 +13,10 @@ export const resolvers = {
         }
       })
 
+      if (!user) {
+        throw new Error('User not found')
+      }
+
       return user
     },
 
@@ -26,6 +30,11 @@ export const resolvers = {
           id
         }
       })
+
+      if (!post) {
+        throw new Error('Post not found')
+      }
+
       return post
     }
   },
